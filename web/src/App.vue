@@ -67,12 +67,12 @@ export default {
     },
     updateFileList: function () {
       this.filelist = [];
-      axios.get("https://uploadapi.shaowenchen.com/api/v1/files").then((response) => {
+      axios.get("https://uploadapi.chenshaowen.com/api/v1/files").then((response) => {
         this.filelist = response.data.data.list;
       });
     },
     clearFiles: function () {
-      axios.get("https://uploadapi.shaowenchen.com/api/v1/clear").then(() => {
+      axios.get("https://uploadapi.chenshaowen.com/api/v1/clear").then(() => {
         this.updateFileList();
       }).catch(error => {
         console.error("Error clearing files:", error);
