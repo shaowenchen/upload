@@ -1,7 +1,8 @@
+import * as Sentry from "@sentry/vue";
+import "bootstrap/dist/css/bootstrap.css";
 import { createApp } from "vue";
 import App from "./App.vue";
-import "bootstrap/dist/css/bootstrap.css";
-import * as Sentry from "@sentry/vue";
+import router from './router';
 const app = createApp(App);
 
 Sentry.init({
@@ -13,4 +14,5 @@ Sentry.init({
   replaysOnErrorSampleRate: 1.0, // If you're not already sampling the entire session, change the sample rate to 100% when sampling sessions where errors occur.
 });
 
+app.use(router);
 app.mount("#app");
